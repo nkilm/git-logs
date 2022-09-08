@@ -1,4 +1,5 @@
 import git
+import sys
 import subprocess
 from pathlib import Path
 from collections import OrderedDict
@@ -83,3 +84,26 @@ def filter_logs(logs: list, author: str, frequency="day") -> dict:
         # Entry already exists for that commit date so increment
         commit_count_by_freq[commit_date]["commits"] += 1
     return commit_count_by_freq
+
+
+def normalize(value: int, xmin: int, xmax: int) -> float:
+    
+    return float(value - xmin) / float(xmax - xmin)
+
+def get_relative_count(filtered_commits: OrderedDict) -> OrderedDict:
+    """Compute normalized score/count based on given filter"""
+
+    values = [item["commits"] for item in filtered_commits.values()]
+    values.append(0) # To handle the case where only 1 value is present
+
+    xmin = min(values)
+    xmax = max(values)
+
+    normalized_info = OrderedDict()
+    
+    for commit_date in filtered_commits.keys():
+        normalized_info[commit_date] = filtered_commits[commit_date].copy()
+        # add normalized value 
+        normalized_info[commit_date]["score"] = normalize(filtered_commits[commit_date]["commits"], xmin, xmax)
+
+    return normalized_info
