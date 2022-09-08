@@ -24,10 +24,10 @@ def get_logs(before: str, after: str, reverse: bool) -> list:
 
     commit_logs = []
     try:
-        if after!="":
-            args.append("--after="+after)
+        if after != "":
+            args.append("--after=" + after)
         if before:
-            args.append("--before="+before)
+            args.append("--before=" + before)
 
         logs = subprocess.check_output(
             args, shell=False, universal_newlines=True
@@ -39,7 +39,7 @@ def get_logs(before: str, after: str, reverse: bool) -> list:
             commit_logs.append({"time_stamp": time_stamp, "author": author})
 
         if reverse:
-            return commit_logs.reverse()
+            return reversed(commit_logs)
 
         return commit_logs
 

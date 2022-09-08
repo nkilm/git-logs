@@ -3,8 +3,7 @@ import argparse
 args_parser = argparse.ArgumentParser(description="Display information from .git")
 
 args_parser.add_argument("-f", "--frequency", action="store", dest="frequency",
-                   type=str, required=False, default="month",
-                   choices=["day", "week", "month", "year"])
+                   type=str, required=False, default="month")
 
 args_parser.add_argument("-u", "--author", action="store", dest="author",
                    type=str, required=False, default="",
@@ -19,7 +18,7 @@ args_parser.add_argument("-b", "--before", action="store", dest="before",
                    help="before date (yyyy-mm-dd hh:mm)")
 
 args_parser.add_argument("-r", "--reverse", action="store", dest="reverse",
-                   type=bool, required=False, default=False,
+                   type=bool, required=False, default=False,choices=[True,False],
                    help="reverse date order")
 
 args = args_parser.parse_args()
