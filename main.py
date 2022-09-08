@@ -1,4 +1,6 @@
-from gitstats import *
+import argparse
+
+from gitstats import is_not_git,get_logs
 
 
 def main():
