@@ -87,7 +87,7 @@ def filter_logs(logs: list, author: str, frequency="day") -> dict:
 
 
 def normalize(value: int, xmin: int, xmax: int) -> float:
-    
+    """ Return min-max normalized value """
     return float(value - xmin) / float(xmax - xmin)
 
 def get_relative_count(filtered_commits: OrderedDict) -> OrderedDict:
