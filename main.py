@@ -1,12 +1,13 @@
 from gitstats import display, is_not_git, get_logs, filter_logs, get_relative_count
 from parser import args
 from validate.check_args import validate
+from utils.bcolors import bcolors
 
 
 def main():
+    """ Check if git is initialized or not """
     if is_not_git():
-        print('Git is not initialized. Please initialize using "git init"')
-
+        print(bcolors('Git is not initialized. Please initialize using "git init"'))
 
     """ Check if correct Arguments given """
     all_correct = validate(
@@ -27,7 +28,11 @@ def main():
     filtered = filter_logs(logs, args.author, args.frequency)
     normalized_logs = get_relative_count(filtered)
 
-    display(normalized_logs)
+    if normalized_logs:
+        print("%d commits over %d %s(s)" %(sum([filtered[f]["commits"] for f in filtered]),len(normalized_logs),args.frequency))
+        display(normalized_logs)
+    else:
+        print("No commits to plot")
 
 
 if __name__ == "__main__":
