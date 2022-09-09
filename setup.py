@@ -13,17 +13,25 @@ setup(
     version=VERSION,
     author="Nikhil Mohite",
     author_email="nikhilmohitelhs@gmail.com",
+    download_url="https://github.com/nkilm/git-logs",
     description=DESCRIPTION,
     long_description_content_type="text/markdown",
+    entry_points={
+        "console_scripts": [
+            "git-logs = git-logs.main:main",
+        ],
+    },
     long_description=LONG_DESCRIPTION,
     packages=find_packages(),
     install_requires=[],
     keywords=['python', 'git','statistics','local repository','git statistics'],
     classifiers=[
+        "Topic :: Utilities",
         "Intended Audience :: Developers",
+        "Programming Language :: Python",
+        "Natural Language :: English",
+        "License :: OSI Approved :: MIT License",
+        "Topic :: Software Development :: Version Control :: Git",
         "Programming Language :: Python :: 3",
-        "Operating System :: Unix",
-        "Operating System :: MacOS :: MacOS X",
-        "Operating System :: Microsoft :: Windows",
     ]
 )
