@@ -1,10 +1,18 @@
 #!/usr/bin/env python
 
 from setuptools import setup, find_packages
+import os
+import codecs
 
 VERSION = "0.0.1"
 DESCRIPTION = "Bird-eye view of a local git repository"
-LONG_DESCRIPTION = "git-stats displays the statistics of a local git repository by listing all commits based on frequency, author etc"
+
+here = os.path.abspath(os.path.dirname(__file__))
+
+def readme():
+    with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
+        long_description = "\n" + fh.read()
+        return long_description
 
 # Setting up
 setup(
@@ -15,7 +23,7 @@ setup(
     download_url="https://github.com/nkilm/git-logs",
     description=DESCRIPTION,
     long_description_content_type="text/markdown",
-    long_description=LONG_DESCRIPTION,
+    long_description=readme(),
     packages=find_packages(),
     install_requires=[],
     entry_points={
