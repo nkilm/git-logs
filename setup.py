@@ -19,9 +19,10 @@ setup(
     long_description=LONG_DESCRIPTION,
     packages=find_packages(),
     install_requires=[],
-     entry_points={
+    entry_points={
         "console_scripts": [
-            "git-logs = git-logs.main:main",
+            "git-logs = gitlogs.main:main",
+            "gitlogs = gitlogs.main:main"
         ],
     },
     keywords=["python", "git", "statistics", "local repository", "git statistics"],

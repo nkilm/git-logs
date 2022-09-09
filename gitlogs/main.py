@@ -1,6 +1,6 @@
-from gitstats import display, is_not_git, get_logs, filter_logs, get_relative_count
 from parser import args
 from validate.check_args import validate
+from gitstats import display, is_not_git, get_logs, filter_logs, get_relative_count
 from utils.bcolors import bcolors
 
 
