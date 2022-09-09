@@ -21,6 +21,6 @@ git-logs
 
 - Error when `git not initialized` 
 
-![screenshot of help option](https://drive.google.com/uc?export=view&id=1osLBAab1dG-ckwULQ4Xe6DAGAg5VI1rc)
+![screenshot of error](https://drive.google.com/uc?export=view&id=1osLBAab1dG-ckwULQ4Xe6DAGAg5VI1rc)
 
 
