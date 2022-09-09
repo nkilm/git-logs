@@ -3,13 +3,14 @@ import subprocess
 from pathlib import Path
 from collections import OrderedDict
 from datetime import datetime
+
 from utils.bcolors import bcolors
 
 
 def is_not_git() -> bool:
     """Check if git is initialized in the repository"""
     try:
-        current_path = Path(__file__).parent.resolve()
+        current_path = Path(".").parent.resolve()
         _ = git.Repo(current_path).git_dir
         return False
     except git.exc.InvalidGitRepositoryError:
@@ -43,8 +44,8 @@ def get_logs(before: str, after: str, reverse: bool) -> list:
 
         return commit_logs
 
-    except Exception as e:
-        print(e)
+    except Exception:
+        return []
 
 
 def filter_logs(logs: list, author: str, frequency="day") -> dict:
