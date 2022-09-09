@@ -1,8 +1,7 @@
-from parser import args
-from validate.check_args import validate
-from gitstats import display, is_not_git, get_logs, filter_logs, get_relative_count
-from utils.bcolors import bcolors
-
+from gitlogs.parser import args
+from gitlogs.validate.check_args import validate
+from gitlogs.gitstats import display, is_not_git, get_logs, filter_logs, get_relative_count
+from gitlogs.utils.bcolors import bcolors
 
 def main():
     """ Check if git is initialized or not """

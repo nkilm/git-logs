@@ -3,7 +3,7 @@ from pathlib import Path
 from collections import OrderedDict
 from datetime import datetime
 
-from utils.bcolors import bcolors
+from gitlogs.utils.bcolors import bcolors
 
 
 def is_not_git() -> bool:

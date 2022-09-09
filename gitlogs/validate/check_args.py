@@ -1,5 +1,6 @@
 from datetime import datetime 
-from utils.bcolors import bcolors
+
+from gitlogs.utils.bcolors import bcolors
 
 def check_date(date):
     if (date==""):

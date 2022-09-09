@@ -15,7 +15,6 @@ setup(
     download_url="https://github.com/nkilm/git-logs",
     description=DESCRIPTION,
     long_description_content_type="text/markdown",
-    py_modules=["utils","validate"],
     long_description=LONG_DESCRIPTION,
     packages=find_packages(),
     install_requires=[],
