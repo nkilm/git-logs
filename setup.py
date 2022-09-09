@@ -9,7 +9,7 @@ LONG_DESCRIPTION = 'git-stats displays the statistics of a local git repository 
 
 # Setting up
 setup(
-    name="git-stats",
+    name="git-logs",
     version=VERSION,
     author="Nikhil Mohite",
     author_email="nikhilmohitelhs@gmail.com",
