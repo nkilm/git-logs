@@ -1,4 +1,3 @@
-import git
 import subprocess
 from pathlib import Path
 from collections import OrderedDict
@@ -9,13 +8,13 @@ from utils.bcolors import bcolors
 
 def is_not_git() -> bool:
     """Check if git is initialized in the repository"""
-    try:
-        current_path = Path(".").parent.resolve()
-        _ = git.Repo(current_path).git_dir
+    args = "git rev-parse --git-dir".split(" ")
+    
+    output = subprocess.run(args,universal_newlines=True,shell=False,stderr=subprocess.DEVNULL)
+    if(output.returncode==0):
         return False
-    except git.exc.InvalidGitRepositoryError:
-        return True
-
+    return True
+    
 
 def get_logs(before: str, after: str, reverse: bool) -> list:
     """Return results of git log [args]"""
@@ -48,7 +47,7 @@ def get_logs(before: str, after: str, reverse: bool) -> list:
         return []
 
 
-def filter_logs(logs: list, author: str, frequency="day") -> dict:
+def filter_logs(logs: list, author: str, frequency="month") -> dict:
     """Filter the logs based on author and frequency(day, week, month, year)"""
 
     commit_count_by_freq = OrderedDict()

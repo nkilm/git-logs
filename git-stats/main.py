@@ -26,16 +26,16 @@ def main():
         print(f"error running 'git log': {e}")
         exit(1)
     
-    if(logs):
-        filtered = filter_logs(logs, args.author, args.frequency)
-        normalized_logs = get_relative_count(filtered)
-        
-        print("%d commits over %d %s(s)\n" %(sum([filtered[f]["commits"] for f in filtered]),len(normalized_logs),args.frequency))
-        display(normalized_logs)
-        
-    else:
+    if(len(logs)<1):
         print(bcolors.fail("No commits to plot"))
-
-
+        exit(0)
+    
+    filtered = filter_logs(logs, args.author, args.frequency)
+    normalized_logs = get_relative_count(filtered)
+    
+    print("%d commits over %d %s(s)\n" %(sum([filtered[f]["commits"] for f in filtered]),len(normalized_logs),args.frequency))
+    display(normalized_logs)
+        
+   
 if __name__ == "__main__":
     main()
