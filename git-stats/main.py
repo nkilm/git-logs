@@ -17,7 +17,6 @@ def main():
     if not all_correct:
         exit(1)
 
-
     """ Program start """
     logs = []
     try:

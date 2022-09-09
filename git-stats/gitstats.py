@@ -9,12 +9,18 @@ from utils.bcolors import bcolors
 def is_not_git() -> bool:
     """Check if git is initialized in the repository"""
     args = "git rev-parse --git-dir".split(" ")
-    
-    output = subprocess.run(args,universal_newlines=True,shell=False,stderr=subprocess.DEVNULL)
-    if(output.returncode==0):
+
+    output = subprocess.run(
+        args,
+        universal_newlines=True,
+        shell=False,
+        stderr=subprocess.DEVNULL, # hide standard error
+        stdout=subprocess.DEVNULL, # hide output 
+    )
+    if output.returncode == 0:
         return False
     return True
-    
+
 
 def get_logs(before: str, after: str, reverse: bool) -> list:
     """Return results of git log [args]"""
@@ -123,5 +129,5 @@ def display(logs: OrderedDict) -> None:
 
         print(f"{bcolors.header(commit_date)}  {bcolors.okblue(count)}", end="\t")
 
-        # sys.stdout.write("-" * int(logs[commit_date]["score"] * 50) + "\n")
+        # Scale up the scores by 50x
         print(bcolors.ok("-") * int(logs[commit_date]["score"] * 50))
