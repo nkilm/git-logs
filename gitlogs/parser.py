@@ -1,6 +1,11 @@
 import argparse
 
+from . import __version__
+
 args_parser = argparse.ArgumentParser(description="Display information from .git")
+
+args_parser.add_argument("-v", "--version", action="store_true",
+ help="Check installed version of the package")
 
 args_parser.add_argument("-f", "--frequency", action="store", dest="frequency",
                    type=str, required=False, default="month")

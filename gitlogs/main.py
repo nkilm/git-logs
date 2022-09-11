@@ -3,6 +3,8 @@ from gitlogs.validate.check_args import validate
 from gitlogs.gitstats import display, is_not_git, get_logs, filter_logs, get_relative_count
 from gitlogs.utils.bcolors import bcolors
 
+from gitlogs import __version__
+
 def main():
     """ Check if git is initialized or not """
     if is_not_git():
@@ -15,6 +17,10 @@ def main():
     )
     if not all_correct:
         exit(1)
+
+    if(args.version):
+        print("git-logs %s" %(__version__))
+        exit(0)
 
     """ Program start """
     logs = []
