@@ -29,7 +29,7 @@ def main():
     except Exception as e:
         print(f"error running 'git log': {e}")
         exit(1)
-    
+    # print(logs)
     if(len(logs)<1):
         print(bcolors.fail("No commits to plot"))
         exit(0)
