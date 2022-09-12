@@ -1,10 +1,19 @@
 #!/usr/bin/env python
 
+""" 
+
+Author: Nikhil Mohite
+Email: nikhilmohitelhs@gmail.com
+GitHub: https://www.github.com/nkilm
+Country: India
+
+"""
+
 from setuptools import setup, find_packages
 import os
 import codecs
 
-VERSION = "0.0.4"
+VERSION = "0.0.5"
 DESCRIPTION = "Bird-eye view of a local git repository"
 
 here = os.path.abspath(os.path.dirname(__file__))
