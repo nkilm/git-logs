@@ -4,6 +4,7 @@ from collections import OrderedDict
 from datetime import datetime
 
 from gitlogs.utils.bcolors import bcolors
+from gitlogs.defaults.handle_defaults import current_symbol
 
 
 def is_not_git() -> bool:
@@ -130,4 +131,4 @@ def display(logs: OrderedDict) -> None:
         print(f"{bcolors.header(commit_date)}  {bcolors.okblue(count)}", end="\t")
 
         # Scale up the scores by 50x
-        print(bcolors.ok("-") * int(logs[commit_date]["score"] * 50))
+        print(bcolors.ok(current_symbol()) * int(logs[commit_date]["score"] * 50))

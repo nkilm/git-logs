@@ -27,7 +27,12 @@ def check_reverse(r):
         return False
     return True
 
-def validate(before_date="", after_date="",frequency="day", author="",reverse=False):
+def check_symbol(s):
+    if(not isinstance(s,str) or len(s)>1):
+        return False 
+    return True
+
+def validate(before_date="", after_date="",frequency="day", author="",reverse=False,symbol="-"):
     
     if(not check_date(before_date)):
         print(bcolors.fail("Invalid date format given for --before. Format should be YYYY-MM-DD"))
@@ -47,6 +52,10 @@ def validate(before_date="", after_date="",frequency="day", author="",reverse=Fa
 
     if(not check_reverse(reverse)):
         print(bcolors.fail("--reverse should be a boolean value(True/False)"))
+        return False
+
+    if(not check_symbol(symbol)):
+        print(bcolors.fail("symbol should be a string of length 1"))
         return False
 
     return True

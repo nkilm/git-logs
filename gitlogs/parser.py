@@ -26,4 +26,7 @@ args_parser.add_argument("-b", "--before", action="store", dest="before",
 args_parser.add_argument("-r", "--reverse", action="store_true",
                          help="reverse date order")
 
+args_parser.add_argument("-s", "--symbol", action="store",dest="symbol",type=str,default="",
+                         help="change the style of display bar")
+
 args = args_parser.parse_args()

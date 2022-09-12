@@ -27,5 +27,5 @@ gitlogs
 
 
 ## To-Do
-- [ ] Add option to change defaults
+- [x] Add option to change defaults
 - [ ] Add more functionalities
