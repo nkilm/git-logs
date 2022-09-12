@@ -1,5 +1,5 @@
 clean:
-	pip uninstall git-logs
+	pip uninstall git-logs -y
 	rm -rf build/ dist/ git_logs.egg-info/ 
 
 install: 
