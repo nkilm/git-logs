@@ -7,6 +7,11 @@ Email: nikhilmohitelhs@gmail.com
 GitHub: https://www.github.com/nkilm
 Country: India
 
+References:
+https://blog.ionelmc.ro/presentations/packaging/#slide:11
+https://stackoverflow.com/questions/49156529/adding-json-file-to-manifest-in-and-installing-package-results-in-an-error
+
+
 """
 
 from setuptools import setup, find_packages
@@ -23,6 +28,7 @@ def readme():
         long_description = "\n" + fh.read()
         return long_description
 
+
 # Setting up
 setup(
     name="git-logs",
@@ -34,6 +40,7 @@ setup(
     long_description_content_type="text/markdown",
     long_description=readme(),
     packages=find_packages(),
+    include_package_data=True,
     install_requires=[],
     entry_points={
         "console_scripts": [
