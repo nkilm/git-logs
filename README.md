@@ -15,20 +15,20 @@ pip install git-logs
 gitlogs 
 ```
 
-![screenshot of the above command](https://drive.google.com/uc?export=view&id=1Fdy5Ss-p_UFQkOw4m3s2Nt0ZLO2cpIKZ)
+![screenshot of the above command](https://drive.google.com/uc?export=view&id=1IXnmwtA1Wc3QozV35HvvVHXtiw-ZrCpv)
 
 - `Help` options
 
-![screenshot of help option](https://drive.google.com/uc?export=view&id=1f1BBdjqhgvothkYuqa3g90y_QXnwibgJ)
+![screenshot of help option](https://drive.google.com/uc?export=view&id=18QQCbFcesh-1q2nXc0jSWiaUz9Bu_0Z9)
 
 - Error when `git not initialized` 
 
-![screenshot of error](https://drive.google.com/uc?export=view&id=1osLBAab1dG-ckwULQ4Xe6DAGAg5VI1rc)
-
+![screenshot of error](https://drive.google.com/uc?export=view&id=1KtmpoPrUdaov7GfoJ3MDf-3zNWQ63sYZ)
 
 ## To-Do
 - [x] Display package version - also checks if installed or not
 - [x] Add option to change the default display bar
+- [ ] Make date format more readable.
 - [ ] Add option to change default frequency
 - [ ] Add option to list last `n` commits
 - [ ] Fix `color` error on Windows Powershell/CMD
