@@ -27,5 +27,9 @@ gitlogs
 
 
 ## To-Do
-- [x] Add option to change defaults
+- [x] Display package version - also checks if installed or not
+- [x] Add option to change the default display bar
+- [ ] Add option to change default frequency
+- [ ] Add option to list last `n` commits
+- [ ] Fix `color` error on Windows Powershell/CMD
 - [ ] Add more functionalities
