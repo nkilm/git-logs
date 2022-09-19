@@ -163,7 +163,11 @@ def display(logs: OrderedDict, frequency: str) -> None:
             y = int(y)
             m = int(m)
             d = int(d)
-            output_date = f"{d} {months[m]},{y} ({weekdays[datetime(y,m,d).isoweekday()]})"
+            if (d<10):
+                output_date = f" {d} {months[m]},{y} ({weekdays[datetime(y,m,d).isoweekday()]})"
+            else:
+                output_date = f"{d} {months[m]},{y} ({weekdays[datetime(y,m,d).isoweekday()]})"
+
         
         print(f"{bcolors.header(output_date)}  {bcolors.okblue(count)}", end="\t")
 
