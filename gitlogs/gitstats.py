@@ -1,11 +1,34 @@
 import subprocess
-from pathlib import Path
 from collections import OrderedDict
 from datetime import datetime
 
 from gitlogs.utils.bcolors import bcolors
 from gitlogs.defaults.handle_defaults import current_symbol
 
+weekdays = {
+    1: "Mon",
+    2:"Tue",
+    3: "Wed",
+    4: "Thu",
+    5: "Fri",
+    6: "Sat",
+    7: "Sun"
+}
+
+months = {
+    1: "Jan",
+    2: "Feb",
+    3: "Mar",
+    4: "Apr",
+    5: "May",
+    6: "Jun",
+    7: "Jul",
+    8: "Aug",
+    9: "Sep",
+    10: "Oct",
+    11: "Nov",
+    12: "Dec"
+}
 
 def is_not_git() -> bool:
     """Check if git is initialized in the repository"""
@@ -122,13 +145,27 @@ def get_relative_count(filtered_commits: OrderedDict) -> OrderedDict:
     return normalized_info
 
 
-def display(logs: OrderedDict) -> None:
+def display(logs: OrderedDict, frequency: str) -> None:
     """Display commit information to stdout"""
 
     for commit_date in logs:
-        count = str(logs[commit_date]["commits"])
+        
+        count = str(logs[commit_date]["commits"])  # how many commits based on frequency
+        output_date = commit_date
 
-        print(f"{bcolors.header(commit_date)}  {bcolors.okblue(count)}", end="\t")
+        if(frequency=="month"):
+            y,m = commit_date.split("-")
+            y = int(y)
+            m = int(m)
+            output_date = f"{y} {months[m]}"
+        elif(frequency=="day"):
+            y,m,d = commit_date.split("-")
+            y = int(y)
+            m = int(m)
+            d = int(d)
+            output_date = f"{d} {months[m]},{y} ({weekdays[datetime(y,m,d).isoweekday()]})"
+        
+        print(f"{bcolors.header(output_date)}  {bcolors.okblue(count)}", end="\t")
 
         # Scale up the scores by 50x
         print(bcolors.ok(current_symbol()) * int(logs[commit_date]["score"] * 50))

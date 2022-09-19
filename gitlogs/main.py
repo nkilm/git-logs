@@ -4,7 +4,7 @@ from gitlogs.gitstats import display, is_not_git, get_logs, filter_logs, get_rel
 from gitlogs.utils.bcolors import bcolors
 from gitlogs.defaults.handle_defaults import change_symbol,display_symbol
 
-from gitlogs import __version__
+from . import __version__
 
 def main():
     """ Show package version """
@@ -46,7 +46,7 @@ def main():
     normalized_logs = get_relative_count(filtered)
     
     print("%d commits over %d %s(s)\n" %(sum([filtered[f]["commits"] for f in filtered]),len(normalized_logs),args.frequency))
-    display(normalized_logs)
+    display(normalized_logs, args.frequency)
         
    
 if __name__ == "__main__":
