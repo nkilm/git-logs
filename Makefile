@@ -1,3 +1,5 @@
+run:
+	python ./gitlogs/main.py
 clean:
 	pip uninstall git-logs -y
 	rm -rf build/ dist/ git_logs.egg-info/ 
