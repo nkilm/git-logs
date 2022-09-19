@@ -28,7 +28,7 @@ gitlogs
 ## To-Do
 - [x] Display package version - also checks if installed or not
 - [x] Add option to change the default display bar
-- [ ] Make date format more readable.
+- [x] Make date format more readable.
 - [ ] Add option to change default frequency
 - [ ] Add option to list last `n` commits
 - [ ] Fix `color` error on Windows Powershell/CMD
