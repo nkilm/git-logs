@@ -12,10 +12,10 @@ pip install git-logs
 
 - By default commits will be listed by `month`
 ```bash
-gitlogs 
+gitlogs -f day
 ```
 
-![screenshot of the above command](https://drive.google.com/uc?export=view&id=1IXnmwtA1Wc3QozV35HvvVHXtiw-ZrCpv)
+![screenshot of the above command](https://drive.google.com/uc?export=view&id=1Jav4untSM46scwsRxcdFyIqbB9fC4nPJ)
 
 - `Help` options
 
