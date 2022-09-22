@@ -97,10 +97,10 @@ def filter_logs(logs: list, author: str, frequency="month") -> dict:
             # return the day of the week
             is_weekend = (
                 True
-                if (datetime.strptime(commit_date, "%Y-%m-%d").weekday() > 4)
+                if (datetime.strptime(commit_date, "%Y-%m-%d").isoweekday()>5)
                 else False
             )
-            # Monday=0, Tuesday=1, Wednesday=2 and so on..
+            # Monday=1, Tuesday=2, Wednesday=3 and so on..
 
         if author != "":
             if author not in commit_info["author"]:
@@ -111,7 +111,7 @@ def filter_logs(logs: list, author: str, frequency="month") -> dict:
             commit_count_by_freq[commit_date] = {
                 "time_stamp": commit_info["time_stamp"],
                 "commits": 0,
-                "weekend": is_weekend,
+                "is_weekend": is_weekend,
             }
 
         # Entry already exists for that commit date so increment
@@ -163,13 +163,20 @@ def display(logs: OrderedDict, frequency: str) -> None:
             y = int(y)
             m = int(m)
             d = int(d)
+            
+            output_date = f"{months[m]},{y} ({weekdays[datetime(y,m,d).isoweekday()]})"
             if (d<10):
-                output_date = f" {d} {months[m]},{y} ({weekdays[datetime(y,m,d).isoweekday()]})"
+                output_date = f" {d} {output_date}"
             else:
-                output_date = f"{d} {months[m]},{y} ({weekdays[datetime(y,m,d).isoweekday()]})"
+                output_date = f"{d} {output_date}"
 
-        
-        print(f"{bcolors.header(output_date)}  {bcolors.okblue(count)}", end="\t")
+        # is weekend
+        if(logs[commit_date]["is_weekend"]): 
+            print(f"{bcolors.colored(output_date, bcolors.BIPurple)}  {bcolors.okblue(count)}", end="\t")
+        # not weekend
+        else: 
+            print(f"{bcolors.header(output_date)}  {bcolors.okblue(count)}", end="\t")
+
 
         # Scale up the scores by 50x
         print(bcolors.ok(current_symbol()) * int(logs[commit_date]["score"] * 50))
