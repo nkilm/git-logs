@@ -14,8 +14,7 @@ pip install git-logs
 ```bash
 gitlogs -f day
 ```
-
-![screenshot of the above command](https://drive.google.com/uc?export=view&id=1Jav4untSM46scwsRxcdFyIqbB9fC4nPJ)
+![screenshot of the above command](https://drive.google.com/uc?export=view&id=1WQhvmRhPos022V_4rha5LHXX9HITddWp)
 
 - `Help` options
 
