@@ -31,4 +31,5 @@ gitlogs -f day
 - [ ] Add option to change default frequency
 - [ ] Add option to list last `n` commits
 - [ ] Fix `color` error on Windows Powershell/CMD
+- [ ] Automate the process of publishing package to `pypi` using `Actions`
 - [ ] Add more functionalities
