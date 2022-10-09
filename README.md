@@ -1,9 +1,15 @@
 # git-logs
 > compare & filter commits based on frequency, author etc
 
+## Contribution Guidelines
+- Read  [CONTRIBUTION.md](CONTRIBUTION.md)
+
 ## Installation 
 ```bash
 pip install git-logs
+
+# upgrade to latest version
+pip install --upgrade git-logs
 ```
 
 ## Usage 
@@ -28,8 +34,8 @@ gitlogs -f day
 - [x] Display package version - also checks if installed or not
 - [x] Add option to change the default display bar
 - [x] Make date format more readable.
+- [x] Automate the process of publishing package to `pypi` using `Actions`
+- [x] Highlight weekends.
 - [ ] Add option to change default frequency
 - [ ] Add option to list last `n` commits
-- [ ] Fix `color` error on Windows Powershell/CMD
-- [ ] Automate the process of publishing package to `pypi` using `Actions`
-- [ ] Add more functionalities
+- [ ] Fix `color` issue on Windows Powershell/CMD
