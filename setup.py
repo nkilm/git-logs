@@ -23,6 +23,7 @@ DESCRIPTION = "Bird-eye view of a local git repository"
 
 here = os.path.abspath(os.path.dirname(__file__))
 
+
 def readme():
     with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
         long_description = "\n" + fh.read()
@@ -45,7 +46,7 @@ setup(
     entry_points={
         "console_scripts": [
             "git-logs = gitlogs.main:main",
-            "gitlogs = gitlogs.main:main"
+            "gitlogs = gitlogs.main:main",
         ],
     },
     keywords=["python", "git", "statistics", "local repository", "git statistics"],
