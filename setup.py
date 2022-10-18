@@ -18,7 +18,7 @@ from setuptools import setup, find_packages
 import os
 import codecs
 
-VERSION = "0.0.9"
+VERSION = "0.1.0"
 DESCRIPTION = "Bird-eye view of a local git repository"
 
 here = os.path.abspath(os.path.dirname(__file__))
