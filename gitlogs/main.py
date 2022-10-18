@@ -3,8 +3,12 @@ from gitlogs.validate.check_args import validate
 from gitlogs.gitstats import display, is_not_git, get_logs, filter_logs, get_relative_count
 from gitlogs.utils.bcolors import bcolors
 from gitlogs.defaults.handle_defaults import change_symbol,display_symbol
-
 from . import __version__
+
+# Fixes the issue of color not rendering in Windows Powershell/CMD
+import ctypes
+kernel32 = ctypes.windll.kernel32
+kernel32.SetConsoleMode(kernel32.GetStdHandle(-11), 7)
 
 def main():
     """ Show package version """

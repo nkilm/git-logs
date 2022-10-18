@@ -36,6 +36,6 @@ gitlogs -f day
 - [x] Make date format more readable.
 - [x] Automate the process of publishing package to `pypi` using `Actions`
 - [x] Highlight weekends.
+- [x] Fix `color` issue on Windows Powershell/CMD
 - [ ] Add option to change default frequency
 - [ ] Add option to list last `n` commits
-- [ ] Fix `color` issue on Windows Powershell/CMD
