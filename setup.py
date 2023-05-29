@@ -3,7 +3,8 @@
 """ 
 
 Author: Nikhil Mohite
-Email: nikhilmohitelhs@gmail.com
+Email: hello@nikhilmohite.com
+Website: nikhilmohite.com
 GitHub: https://www.github.com/nkilm
 Country: India
 
@@ -35,7 +36,7 @@ setup(
     name="git-logs",
     version=VERSION,
     author="Nikhil Mohite",
-    author_email="nikhilmohitelhs@gmail.com",
+    author_email="hello@nikhilmohite.com",
     download_url="https://github.com/nkilm/git-logs",
     description=DESCRIPTION,
     long_description_content_type="text/markdown",
